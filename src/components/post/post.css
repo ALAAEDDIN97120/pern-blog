@@ -1,0 +1,49 @@
+.post {
+	padding: 10px;
+	margin: 10px;
+	background-color: aliceblue;
+	border-radius: 7px;
+}
+.postItems {
+}
+
+.postDate {
+	color: gray;
+	font-size: 10px;
+	margin: 5px 0;
+}
+.postItems {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.postImg {
+	width: 100%;
+	height: 200px;
+	border-radius: 2%;
+	object-fit: cover;
+}
+
+.titlePost {
+	font-size: 25px;
+	font-weight: 700;
+	cursor: pointer;
+}
+.titlePost:hover {
+	color: rgb(202, 28, 28);
+}
+
+.postDesc {
+	font-family: "Varela Round", Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+	color: #444444;
+	margin-top: 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+}
