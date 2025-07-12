@@ -1,0 +1,265 @@
+.login {
+	height: calc(100vh - 50px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(
+			rgba(255, 255, 255, 0.1),
+			rgba(255, 255, 255, 0.2)
+		),
+		url("https://images.pexels.com/photos/768473/pexels-photo-768473.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.loginTitle {
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	text-align: center;
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: #333;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loginForm {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 400px;
+	padding: 30px;
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 15px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10px);
+}
+
+.loginForm > label {
+	margin: 15px 0 5px 0;
+	font-weight: 500;
+	color: #333;
+	font-size: 1rem;
+}
+
+.loginInput {
+	padding: 15px;
+	background-color: white;
+	border: 2px solid #e0e0e0;
+	border-radius: 10px;
+	font-size: 1rem;
+	transition: all 0.3s ease;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.loginInput:focus {
+	outline: none;
+	border-color: #4caf50;
+	box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+	transform: translateY(-2px);
+}
+
+.loginButton {
+	margin-top: 25px;
+	cursor: pointer;
+	background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+	color: white;
+	padding: 15px;
+	border: none;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 1rem;
+	font-weight: 600;
+	transition: all 0.3s ease;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.loginButton:hover {
+	background: linear-gradient(135deg, #ff5252, #ff7979);
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.loginRegisterButton {
+	position: fixed;
+	top: 80px;
+	right: 20px;
+	background: linear-gradient(135deg, #009688, #26a69a);
+	cursor: pointer;
+	padding: 12px 20px;
+	border: none;
+	color: white;
+	border-radius: 10px;
+	font-size: 0.9rem;
+	font-weight: 500;
+	transition: all 0.3s ease;
+	z-index: 9998;
+}
+
+.loginRegisterButton:hover {
+	background: linear-gradient(135deg, #00796b, #00897b);
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(0, 150, 136, 0.4);
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+	.login {
+		height: 100vh;
+		padding: 15px;
+		background-attachment: scroll;
+	}
+
+	.loginForm {
+		padding: 20px;
+		max-width: 90%;
+		margin: 0 auto;
+	}
+
+	.loginTitle {
+		font-size: clamp(1.5rem, 6vw, 2.5rem);
+		margin-bottom: 15px;
+	}
+
+	.loginInput {
+		padding: 12px;
+		font-size: 16px; /* منع التكبير على iOS */
+	}
+
+	.loginButton {
+		padding: 12px;
+		font-size: 1rem;
+	}
+
+	.loginRegisterButton {
+		top: 15px;
+		right: 15px;
+		padding: 10px 15px;
+		font-size: 0.8rem;
+	}
+}
+
+/* استجابة للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+	.login {
+		padding: 10px;
+	}
+
+	.loginForm {
+		padding: 15px;
+		max-width: 95%;
+	}
+
+	.loginTitle {
+		font-size: clamp(1.2rem, 7vw, 2rem);
+	}
+
+	.loginForm > label {
+		font-size: 0.9rem;
+	}
+
+	.loginInput {
+		padding: 10px;
+	}
+
+	.loginButton {
+		padding: 10px;
+		font-size: 0.9rem;
+	}
+
+	.loginRegisterButton {
+		top: 10px;
+		right: 10px;
+		padding: 8px 12px;
+		font-size: 0.75rem;
+	}
+}
+
+/* استجابة للشاشات الكبيرة */
+@media (min-width: 1200px) {
+	.loginForm {
+		max-width: 450px;
+		padding: 40px;
+	}
+
+	.loginTitle {
+		font-size: clamp(2.5rem, 4vw, 4rem);
+	}
+}
+
+/* تحسينات لأجهزة اللمس */
+@media (hover: none) and (pointer: coarse) {
+	.loginButton,
+	.loginRegisterButton {
+		min-height: 44px; /* الحد الأدنى للمس */
+	}
+
+	.loginInput {
+		min-height: 44px;
+	}
+}
+
+/* وضع الليل */
+@media (prefers-color-scheme: dark) {
+	.loginTitle {
+		color: #fff;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+
+	.loginForm {
+		background-color: rgba(0, 0, 0, 0.6);
+		color: #fff;
+	}
+
+	.loginForm > label {
+		color: #fff;
+	}
+
+	.loginInput {
+		background-color: rgba(255, 255, 255, 0.1);
+		color: #fff;
+		border-color: rgba(255, 255, 255, 0.3);
+	}
+
+	.loginInput:focus {
+		border-color: #4caf50;
+		background-color: rgba(255, 255, 255, 0.15);
+	}
+}
+
+/* تحسينات للأداء */
+.loginButton,
+.loginRegisterButton,
+.loginInput {
+	will-change: transform;
+}
+
+/* تحسينات إضافية للاستجابة */
+.login {
+	min-height: 100vh;
+	overflow-y: auto;
+}
+
+/* إصلاح للشاشات القصيرة */
+@media (max-height: 600px) {
+	.login {
+		height: auto;
+		min-height: 100vh;
+		padding: 10px;
+	}
+
+	.loginForm {
+		margin-top: 10px;
+		padding: 20px;
+	}
+
+	.loginTitle {
+		font-size: clamp(1.5rem, 4vw, 2.5rem);
+		margin-bottom: 10px;
+	}
+}

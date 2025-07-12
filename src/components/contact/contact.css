@@ -1,0 +1,379 @@
+/* صفحة الاتصال الرئيسية */
+.contactItem {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	padding: 40px;
+	max-width: 1200px;
+	margin: 0 auto;
+	background-color: #fff;
+	border-radius: 15px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	animation: fadeInUp 0.6s ease-out;
+}
+
+.contactItem:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* نموذج الاتصال */
+.contactF {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* تسميات النماذج */
+.contactF label {
+	font-family: "Lora", serif;
+	font-size: 14px;
+	font-weight: 600;
+	color: #444;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* حقول الإدخال */
+.contactF input[type="text"],
+.contactF input[type="email"],
+.contactF input[type="number"],
+.contactF textarea {
+	width: 100%;
+	padding: 15px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	font-family: "Varela Round", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #444;
+	background-color: #fafafa;
+	transition: all 0.3s ease;
+	box-sizing: border-box;
+}
+
+.contactF input[type="text"]:focus,
+.contactF input[type="email"]:focus,
+.contactF input[type="number"]:focus,
+.contactF textarea:focus {
+	outline: none;
+	border-color: #e74c3c;
+	background-color: #fff;
+	box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* منطقة النص */
+.contactF textarea {
+	resize: vertical;
+	min-height: 120px;
+	font-family: "Varela Round", Arial, Helvetica, sans-serif;
+	line-height: 1.6;
+}
+
+/* زر الإرسال */
+.contactF button[type="submit"] {
+	padding: 15px 30px;
+	background-color: #e74c3c;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	font-family: "Lora", serif;
+	font-size: 16px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	margin-top: 10px;
+}
+
+.contactF button[type="submit"]:hover {
+	background-color: #c0392b;
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+.contactF button[type="submit"]:active {
+	transform: translateY(0);
+}
+
+/* معلومات الاتصال */
+.conectIfo {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	padding: 20px;
+	background-color: #f8f9fa;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	align-self: start;
+}
+
+.conectIfo span {
+	font-family: "Varela Round", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #666;
+	line-height: 1.6;
+	padding: 12px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	transition: all 0.3s ease;
+}
+
+.conectIfo span:last-child {
+	border-bottom: none;
+}
+
+.conectIfo span:hover {
+	color: #e74c3c;
+	transform: translateX(5px);
+}
+
+/* أيقونات لمعلومات الاتصال */
+.conectIfo .email::before {
+	content: "✉️ ";
+	margin-right: 8px;
+}
+
+.conectIfo .phone::before {
+	content: "📞 ";
+	margin-right: 8px;
+}
+
+.conectIfo .location::before {
+	content: "📍 ";
+	margin-right: 8px;
+}
+
+/* الرسوم المتحركة */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* استعلامات الوسائط للشاشات الكبيرة */
+@media (min-width: 1400px) {
+	.contactItem {
+		gap: 50px;
+		padding: 50px;
+	}
+
+	.contactF label {
+		font-size: 15px;
+	}
+
+	.contactF input[type="text"],
+	.contactF input[type="email"],
+	.contactF input[type="number"],
+	.contactF textarea {
+		padding: 18px;
+		font-size: 15px;
+	}
+
+	.contactF button[type="submit"] {
+		padding: 18px 35px;
+		font-size: 17px;
+	}
+
+	.conectIfo span {
+		font-size: 15px;
+	}
+}
+
+/* استعلامات الوسائط للشاشات المتوسطة */
+@media (max-width: 1024px) {
+	.contactItem {
+		gap: 30px;
+		padding: 30px;
+	}
+
+	.contactF input[type="text"],
+	.contactF input[type="email"],
+	.contactF input[type="number"],
+	.contactF textarea {
+		padding: 12px;
+		font-size: 13px;
+	}
+
+	.contactF button[type="submit"] {
+		padding: 12px 25px;
+		font-size: 15px;
+	}
+
+	.conectIfo span {
+		font-size: 13px;
+	}
+}
+
+/* استعلامات الوسائط للشاشات الصغيرة */
+@media (max-width: 768px) {
+	.contactItem {
+		grid-template-columns: 1fr;
+		gap: 30px;
+		padding: 25px;
+		margin: 20px;
+	}
+
+	.contactF gap {
+		gap: 15px;
+	}
+
+	.contactF label {
+		font-size: 13px;
+	}
+
+	.contactF input[type="text"],
+	.contactF input[type="email"],
+	.contactF input[type="number"],
+	.contactF textarea {
+		padding: 12px;
+		font-size: 13px;
+	}
+
+	.contactF textarea {
+		min-height: 100px;
+	}
+
+	.contactF button[type="submit"] {
+		padding: 12px 20px;
+		font-size: 14px;
+	}
+
+	.conectIfo {
+		gap: 20px;
+		padding: 15px;
+	}
+
+	.conectIfo span {
+		font-size: 13px;
+		padding: 10px 0;
+	}
+}
+
+/* استعلامات الوسائط للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+	.contactItem {
+		padding: 20px;
+		margin: 15px;
+		gap: 25px;
+	}
+
+	.contactF {
+		gap: 12px;
+	}
+
+	.contactF label {
+		font-size: 12px;
+	}
+
+	.contactF input[type="text"],
+	.contactF input[type="email"],
+	.contactF input[type="number"],
+	.contactF textarea {
+		padding: 10px;
+		font-size: 12px;
+	}
+
+	.contactF textarea {
+		min-height: 80px;
+	}
+
+	.contactF button[type="submit"] {
+		padding: 10px 15px;
+		font-size: 13px;
+	}
+
+	.conectIfo {
+		gap: 15px;
+		padding: 12px;
+	}
+
+	.conectIfo span {
+		font-size: 12px;
+		padding: 8px 0;
+	}
+}
+
+/* تحسينات للشاشات العريضة جداً */
+@media (min-width: 1800px) {
+	.contactItem {
+		max-width: 1400px;
+		gap: 60px;
+		padding: 60px;
+	}
+}
+
+/* تحسينات للشاشات القصيرة */
+@media (max-height: 600px) {
+	.contactItem {
+		padding: 20px;
+		gap: 20px;
+	}
+
+	.contactF textarea {
+		min-height: 60px;
+	}
+
+	.conectIfo {
+		gap: 15px;
+	}
+}
+
+/* تحسينات للطباعة */
+@media print {
+	.contactItem {
+		grid-template-columns: 1fr;
+		box-shadow: none;
+		border: 1px solid #ccc;
+	}
+
+	.contactF button[type="submit"] {
+		display: none;
+	}
+}
+
+/* تحسينات للأداء */
+.contactItem,
+.contactF input,
+.contactF textarea,
+.contactF button {
+	will-change: transform;
+}
+
+/* تحسينات للوصول */
+.contactF input:focus,
+.contactF textarea:focus,
+.contactF button:focus {
+	outline: 2px solid #007bff;
+	outline-offset: 2px;
+}
+
+/* تحسينات لتجربة المستخدم */
+.contactF input::placeholder,
+.contactF textarea::placeholder {
+	color: #aaa;
+	opacity: 1;
+}
+
+/* تأثيرات التحميل لحقول الإدخال */
+.contactF input,
+.contactF textarea {
+	background-color: #f0f0f0;
+	background-image: linear-gradient(
+		45deg,
+		#f0f0f0 25%,
+		transparent 25%,
+		transparent 75%,
+		#f0f0f0 75%,
+		#f0f0f0
+	);
+	background-size: 20px 20px;
+	background-repeat: repeat;
+}

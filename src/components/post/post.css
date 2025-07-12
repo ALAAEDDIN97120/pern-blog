@@ -1,49 +1,318 @@
+/* المنشور الواحد */
 .post {
-	padding: 10px;
-	margin: 10px;
-	background-color: aliceblue;
-	border-radius: 7px;
-}
-.postItems {
+	padding: 20px;
+	margin: 0;
+	background-color: #fff;
+	border-radius: 15px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+	overflow: hidden;
+	border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.postDate {
-	color: gray;
-	font-size: 10px;
-	margin: 5px 0;
+.post:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
+
+/* عناصر المنشور */
 .postItems {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	flex-direction: column;
-	align-items: center;
+	align-items: stretch;
 }
+
+/* تاريخ المنشور */
+.postDate {
+	color: #888;
+	font-size: 12px;
+	margin: 0 0 15px 0;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* صورة المنشور */
 .postImg {
 	width: 100%;
-	height: 200px;
-	border-radius: 2%;
+	height: 220px;
+	border-radius: 10px;
 	object-fit: cover;
+	transition: all 0.3s ease;
+	margin-bottom: 15px;
 }
 
+.postImg:hover {
+	transform: scale(1.05);
+}
+
+/* عنوان المنشور */
 .titlePost {
-	font-size: 25px;
+	font-size: clamp(1.2rem, 2.5vw, 1.6rem);
 	font-weight: 700;
 	cursor: pointer;
-}
-.titlePost:hover {
-	color: rgb(202, 28, 28);
+	margin: 10px 0;
+	line-height: 1.3;
+	transition: all 0.3s ease;
+	color: #333;
 }
 
+.titlePost:hover {
+	color: #e74c3c;
+	text-decoration: underline;
+}
+
+/* وصف المنشور */
 .postDesc {
 	font-family: "Varela Round", Arial, Helvetica, sans-serif;
 	font-weight: 400;
 	font-size: 14px;
-	line-height: 24px;
-	color: #444444;
-	margin-top: 15px;
+	line-height: 1.6;
+	color: #666;
+	margin-top: 10px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
 	-webkit-line-clamp: 4;
 	-webkit-box-orient: vertical;
+}
+
+/* استجابة للشاشات الكبيرة */
+@media (min-width: 1400px) {
+	.posts {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+		padding: 40px;
+	}
+
+	.post {
+		padding: 25px;
+	}
+
+	.postImg {
+		height: 250px;
+	}
+
+	.titlePost {
+		font-size: 1.8rem;
+	}
+
+	.postDesc {
+		font-size: 15px;
+	}
+}
+
+/* استجابة للشاشات المتوسطة */
+@media (max-width: 1024px) {
+	.posts {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+		padding: 25px;
+	}
+
+	.post {
+		padding: 18px;
+	}
+
+	.postImg {
+		height: 200px;
+	}
+
+	.titlePost {
+		font-size: 1.4rem;
+	}
+
+	.postDesc {
+		font-size: 13px;
+		-webkit-line-clamp: 3;
+	}
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+	.posts {
+		grid-template-columns: 1fr;
+		gap: 20px;
+		padding: 20px;
+	}
+
+	.post {
+		padding: 15px;
+		margin: 0;
+	}
+
+	.postImg {
+		height: 180px;
+	}
+
+	.titlePost {
+		font-size: 1.3rem;
+	}
+
+	.postDesc {
+		font-size: 13px;
+		-webkit-line-clamp: 3;
+	}
+
+	.postDate {
+		font-size: 11px;
+	}
+}
+
+/* استجابة للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+	.posts {
+		padding: 15px;
+		gap: 15px;
+	}
+
+	.post {
+		padding: 12px;
+	}
+
+	.postImg {
+		height: 160px;
+		border-radius: 8px;
+	}
+
+	.titlePost {
+		font-size: 1.2rem;
+		margin: 8px 0;
+	}
+
+	.postDesc {
+		font-size: 12px;
+		line-height: 1.5;
+		-webkit-line-clamp: 2;
+	}
+
+	.postDate {
+		font-size: 10px;
+		margin: 0 0 10px 0;
+	}
+}
+/* 
+
+@media (prefers-color-scheme: dark) {
+	.post {
+		background-color: #2c2c2c;
+		border-color: rgba(255, 255, 255, 0.1);
+	}
+
+	.titlePost {
+		color: #fff;
+	}
+
+	.titlePost:hover {
+		color: #ff6b6b;
+	}
+
+	.postDesc {
+		color: #ccc;
+	}
+
+	.postDate {
+		color: #aaa;
+	}
+}
+*/
+
+/* تحسينات للأداء */
+.post,
+.postImg,
+.titlePost {
+	will-change: transform;
+}
+
+/* تحسينات للتحميل */
+.postImg {
+	background-color: #f0f0f0;
+	background-image: linear-gradient(
+		45deg,
+		#f0f0f0 25%,
+		transparent 25%,
+		transparent 75%,
+		#f0f0f0 75%,
+		#f0f0f0
+	);
+	background-size: 20px 20px;
+	background-repeat: repeat;
+}
+
+/* تحسينات إضافية للشبكة */
+.posts {
+	align-items: start;
+}
+
+/* تأثيرات التحميل */
+.post {
+	animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* تحسينات للوصول */
+.titlePost:focus {
+	outline: 2px solid #007bff;
+	outline-offset: 2px;
+}
+
+/* تحسينات للشاشات العريضة جداً */
+@media (min-width: 1800px) {
+	.posts {
+		grid-template-columns: repeat(4, 1fr);
+		max-width: 1600px;
+	}
+}
+
+/* تحسينات للشاشات القصيرة */
+@media (max-height: 600px) {
+	.posts {
+		padding: 15px;
+	}
+
+	.post {
+		padding: 10px;
+	}
+
+	.postImg {
+		height: 120px;
+	}
+
+	.titlePost {
+		font-size: 1.1rem;
+	}
+
+	.postDesc {
+		font-size: 11px;
+		-webkit-line-clamp: 2;
+	}
+}
+
+/* تحسينات للطباعة */
+@media print {
+	.posts {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.post {
+		break-inside: avoid;
+		box-shadow: none;
+		border: 1px solid #ccc;
+	}
+
+	.postImg {
+		height: 150px;
+	}
 }

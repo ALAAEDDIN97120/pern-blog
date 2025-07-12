@@ -1,0 +1,360 @@
+/* تصميم CSS مرن ومتجاوب لصفحة الإعدادات */
+.settings {
+	display: flex;
+	min-height: 100vh;
+	gap: 20px;
+	padding: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.settingsWrapper {
+	flex: 9;
+	padding: clamp(15px, 2vw, 30px);
+	background: #fff;
+	border-radius: 12px;
+	margin-top: 30px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+	min-width: 0; /* لضمان المرونة */
+}
+
+.settingsTitle {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.settingsTitleIntro {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex: 1;
+	min-width: 250px;
+}
+
+.settingsTitleUpdate {
+	font-size: clamp(24px, 3vw, 30px);
+	margin-bottom: 20px;
+	color: lightcoral;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.settingsTitleDelete {
+	color: #ff4444;
+	font-size: clamp(11px, 1vw, 12px);
+	cursor: pointer;
+	padding: 8px 12px;
+	border-radius: 6px;
+	transition: all 0.3s ease;
+	background: rgba(255, 68, 68, 0.1);
+	border: 1px solid rgba(255, 68, 68, 0.2);
+}
+
+.settingsTitleDelete:hover {
+	background: rgba(255, 68, 68, 0.2);
+	transform: translateY(-1px);
+}
+
+.settingsForm {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+}
+
+.imgContainer {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	gap: 15px;
+	flex-wrap: wrap;
+}
+
+.imgContainer > img {
+	height: clamp(60px, 6vw, 80px);
+	width: clamp(60px, 6vw, 80px);
+	border-radius: 20px;
+	object-fit: cover;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
+}
+
+.imgContainer > img:hover {
+	transform: scale(1.05);
+}
+
+.settingsIcon {
+	width: clamp(22px, 2.5vw, 28px);
+	height: clamp(22px, 2.5vw, 28px);
+	padding: 6px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	border-radius: 50%;
+	color: white;
+	background-color: lightcoral;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 8px rgba(240, 128, 128, 0.3);
+}
+
+.settingsIcon:hover {
+	background-color: #e85a5a;
+	transform: scale(1.1);
+	box-shadow: 0 4px 12px rgba(240, 128, 128, 0.4);
+}
+
+.settingsIcon:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(240, 128, 128, 0.3);
+}
+
+.settingsForm > label {
+	font-size: clamp(16px, 1.8vw, 20px);
+	margin-top: 20px;
+	font-weight: 500;
+	color: #333;
+}
+
+.settingsImgInput {
+	width: min(30%, 200px);
+	min-width: 120px;
+}
+
+.settingsForm > input {
+	color: #666;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 40px;
+	border: none;
+	border-bottom: 2px solid #e0e0e0;
+	font-size: clamp(14px, 1.2vw, 16px);
+	padding: 8px 0;
+	transition: all 0.3s ease;
+	background: transparent;
+}
+
+.settingsForm > input:focus {
+	outline: none;
+	border-bottom-color: teal;
+	background: rgba(0, 128, 128, 0.02);
+}
+
+.settingsForm > input::placeholder {
+	color: #999;
+}
+
+.settingsSubmitButton {
+	align-self: center;
+	width: clamp(140px, 15vw, 180px);
+	border: none;
+	border-radius: 10px;
+	color: white;
+	background-color: teal;
+	padding: 12px 20px;
+	margin-top: 30px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: clamp(14px, 1.2vw, 16px);
+	font-weight: 500;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+}
+
+.settingsSubmitButton:hover {
+	background-color: #006666;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(0, 128, 128, 0.4);
+}
+
+.settingsSubmitButton:active {
+	transform: translateY(0);
+}
+
+/* تصميم متجاوب للشاشات المختلفة */
+@media (max-width: 1024px) {
+	.settings {
+		padding: 15px;
+		gap: 15px;
+	}
+
+	.settingsWrapper {
+		padding: 20px;
+	}
+
+	.settingsTitleIntro {
+		min-width: 200px;
+	}
+
+	.settingsImgInput {
+		width: min(40%, 180px);
+	}
+}
+
+@media (max-width: 768px) {
+	.settings {
+		flex-direction: column;
+		padding: 10px;
+		gap: 20px;
+	}
+
+	.settingsWrapper {
+		flex: 1;
+		padding: 15px;
+	}
+
+	.settingsTitle {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
+
+	.settingsTitleIntro {
+		width: 100%;
+		min-width: unset;
+	}
+
+	.settingsTitleUpdate {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+
+	.imgContainer {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
+
+	.settingsImgInput {
+		width: min(60%, 250px);
+		min-width: 150px;
+	}
+
+	.settingsForm > input {
+		height: 35px;
+	}
+
+	.settingsSubmitButton {
+		width: min(70%, 200px);
+		padding: 10px 16px;
+	}
+}
+
+@media (max-width: 480px) {
+	.settings {
+		padding: 8px;
+	}
+
+	.settingsWrapper {
+		padding: 12px;
+	}
+
+	.settingsTitleUpdate {
+		font-size: 20px;
+	}
+
+	.settingsTitleDelete {
+		font-size: 11px;
+		padding: 6px 8px;
+	}
+
+	.imgContainer {
+		align-items: center;
+		text-align: center;
+	}
+
+	.imgContainer > img {
+		height: 50px;
+		width: 50px;
+	}
+
+	.settingsIcon {
+		width: 20px;
+		height: 20px;
+		padding: 4px;
+	}
+
+	.settingsForm > label {
+		font-size: 16px;
+		margin-top: 15px;
+	}
+
+	.settingsImgInput {
+		width: 80%;
+		min-width: 120px;
+	}
+
+	.settingsForm > input {
+		height: 30px;
+		font-size: 14px;
+	}
+
+	.settingsSubmitButton {
+		width: 80%;
+		padding: 8px 12px;
+		font-size: 14px;
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 320px) {
+	.settingsWrapper {
+		padding: 8px;
+	}
+
+	.settingsTitleUpdate {
+		font-size: 18px;
+	}
+
+	.imgContainer > img {
+		height: 45px;
+		width: 45px;
+	}
+
+	.settingsIcon {
+		width: 18px;
+		height: 18px;
+	}
+
+	.settingsForm > label {
+		font-size: 14px;
+	}
+
+	.settingsImgInput {
+		width: 90%;
+	}
+
+	.settingsSubmitButton {
+		width: 90%;
+		font-size: 13px;
+	}
+}
+
+/* تحسينات إضافية للوضوح والأناقة */
+.settings * {
+	box-sizing: border-box;
+}
+
+.settingsForm > input:invalid {
+	border-bottom-color: #ff4444;
+}
+
+.settingsForm > input:valid {
+	border-bottom-color: teal;
+}
+
+/* تأثيرات تحسين تجربة المستخدم */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition: none !important;
+		animation: none !important;
+	}
+}

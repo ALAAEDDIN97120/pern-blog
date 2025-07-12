@@ -1,34 +1,297 @@
+/* تصميم CSS مرن ومتجاوب للشريط الجانبي */
 .sidebar {
-	margin: 10px;
 	flex: 3;
+	min-width: 250px;
+	max-width: 400px;
+	transition: all 0.3s ease;
 }
+
 .sidebarTtem {
 	text-align: center;
-	padding: 5px;
-	background-color: #f6f3f3;
-	border-radius: 10px;
+	padding: clamp(8px, 1.2vw, 12px);
+	background-color: #fff;
+	border-radius: 12px;
+	margin: 30px 0;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	transition: all 0.3s ease;
+	border: 1px solid rgba(0, 0, 0, 0.05);
 }
+
+.sidebarTtem:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+	background-color: #f1f1f1;
+}
+
 .sidebarImg {
-	padding: 2px;
-	margin: 5px 0;
-	height: 150px;
+	padding: 3px;
+	margin: clamp(8px, 1vw, 12px) 0;
+	height: clamp(120px, 15vw, 180px);
 	width: 100%;
-	border-radius: 2%;
+	border-radius: 8px;
 	object-fit: cover;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebarImg:hover {
+	transform: scale(1.02);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .categories {
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
+	flex-wrap: wrap;
+	gap: clamp(8px, 1vw, 15px);
+	padding: clamp(8px, 1vw, 12px);
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 8px;
+	margin-top: 10px;
 }
 
 .iconSidebar {
-	margin-left: 10px;
+	margin-left: clamp(6px, 1vw, 12px);
 	color: #444;
 	cursor: pointer;
-	font-size: 20px;
+	font-size: clamp(16px, 2vw, 22px);
+	transition: all 0.3s ease;
+	padding: 8px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 40px;
+	min-height: 40px;
 }
+
 .iconSidebar:hover {
-	color: gray;
+	color: #666;
+	background-color: rgba(0, 0, 0, 0.05);
+	transform: scale(1.1);
+}
+
+.iconSidebar:active {
+	transform: scale(0.95);
+}
+
+/* تصميم متجاوب للشاشات المختلفة */
+@media (max-width: 1200px) {
+	.sidebar {
+		min-width: 220px;
+		max-width: 350px;
+	}
+
+	.sidebarImg {
+		height: clamp(100px, 12vw, 150px);
+	}
+
+	.iconSidebar {
+		font-size: clamp(14px, 1.8vw, 20px);
+		min-width: 36px;
+		min-height: 36px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.sidebar {
+		min-width: 200px;
+		max-width: 300px;
+	}
+
+	.sidebarImg {
+		height: clamp(90px, 10vw, 130px);
+	}
+
+	.categories {
+		gap: clamp(6px, 0.8vw, 10px);
+	}
+
+	.iconSidebar {
+		font-size: clamp(14px, 1.6vw, 18px);
+		min-width: 32px;
+		min-height: 32px;
+		margin-left: clamp(4px, 0.8vw, 8px);
+	}
+}
+
+@media (max-width: 768px) {
+	.sidebar {
+		min-width: 100%;
+		max-width: 100%;
+		margin: clamp(5px, 1vw, 10px);
+		order: 2; /* إذا كان داخل flexbox، يمكن تغيير الترتيب */
+	}
+
+	.sidebarTtem {
+		padding: clamp(6px, 1vw, 10px);
+		margin-bottom: 15px;
+	}
+
+	.sidebarImg {
+		height: clamp(80px, 8vw, 120px);
+		margin: clamp(6px, 0.8vw, 10px) 0;
+	}
+
+	.categories {
+		justify-content: center;
+		gap: clamp(5px, 0.6vw, 8px);
+		padding: clamp(6px, 0.8vw, 10px);
+	}
+
+	.iconSidebar {
+		font-size: clamp(12px, 1.4vw, 16px);
+		min-width: 28px;
+		min-height: 28px;
+		margin-left: clamp(3px, 0.6vw, 6px);
+		padding: 6px;
+	}
+}
+
+@media (max-width: 480px) {
+	.sidebar {
+		margin: 5px;
+		min-width: calc(100% - 10px);
+	}
+
+	.sidebarTtem {
+		padding: 8px;
+		margin-bottom: 12px;
+		border-radius: 10px;
+	}
+
+	.sidebarImg {
+		height: 100px;
+		margin: 8px 0;
+		border-radius: 6px;
+	}
+
+	.categories {
+		gap: 5px;
+		padding: 8px;
+		flex-wrap: wrap;
+	}
+
+	.iconSidebar {
+		font-size: 14px;
+		min-width: 24px;
+		min-height: 24px;
+		margin-left: 3px;
+		padding: 4px;
+	}
+}
+
+@media (max-width: 320px) {
+	.sidebar {
+		margin: 3px;
+		min-width: calc(100% - 6px);
+	}
+
+	.sidebarTtem {
+		padding: 6px;
+		margin-bottom: 10px;
+	}
+
+	.sidebarImg {
+		height: 80px;
+		margin: 6px 0;
+	}
+
+	.categories {
+		gap: 3px;
+		padding: 6px;
+	}
+
+	.iconSidebar {
+		font-size: 12px;
+		min-width: 20px;
+		min-height: 20px;
+		margin-left: 2px;
+		padding: 3px;
+	}
+}
+
+/* تحسينات إضافية للتخطيط المرن */
+.sidebar-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+/* إذا كان الشريط الجانبي جزء من تخطيط أكبر */
+@media (max-width: 768px) {
+	.main-layout {
+		flex-direction: column;
+	}
+
+	.sidebar {
+		width: 100%;
+		order: 1; /* يظهر في الأعلى على الشاشات الصغيرة */
+	}
+}
+
+/* تحسينات لوضع الشريط الجانبي الأفقي على الشاشات الصغيرة */
+@media (max-width: 768px) {
+	.sidebar.horizontal {
+		display: flex;
+		flex-direction: row;
+		overflow-x: auto;
+		gap: 15px;
+		padding: 10px;
+	}
+
+	.sidebar.horizontal .sidebarTtem {
+		min-width: 200px;
+		flex-shrink: 0;
+	}
+
+	.sidebar.horizontal .sidebarImg {
+		height: 100px;
+	}
+}
+
+/* تأثيرات تحسين تجربة المستخدم */
+.sidebar::-webkit-scrollbar {
+	width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+	background: #c1c1c1;
+	border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+	background: #a8a8a8;
+}
+
+/* تحسينات للأداء والحركة */
+@media (prefers-reduced-motion: reduce) {
+	.sidebar *,
+	.sidebarTtem,
+	.sidebarImg,
+	.iconSidebar {
+		transition: none !important;
+		animation: none !important;
+	}
+}
+
+/* تحسينات إضافية للوضوح */
+.sidebar * {
+	box-sizing: border-box;
+}
+
+.sidebarTtem:focus-within {
+	outline: 2px solid #007acc;
+	outline-offset: 2px;
+}
+
+.iconSidebar:focus {
+	outline: 2px solid #007acc;
+	outline-offset: 2px;
 }

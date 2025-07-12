@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./post.css";
 
 const Post = () => {
@@ -10,7 +11,11 @@ const Post = () => {
 					alt=""
 				/>
 				<span className="postDate">Music Life</span>
-				<p className="titlePost">Lorem ipsum dolor sit amet</p>
+				<p className="titlePost">
+					<Link className="link" to={"/post"}>
+						Lorem ipsum dolor sit amet consectetur
+					</Link>
+				</p>
 				<span className="postDate">1 hour ago</span>
 				<p className="postDesc">
 					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate

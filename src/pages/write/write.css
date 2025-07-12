@@ -1,0 +1,275 @@
+.write {
+	padding-top: 50px;
+	min-height: 100vh;
+	position: relative;
+}
+
+.writeItem {
+	position: relative;
+	max-width: 1200px;
+	margin: 0 43px;
+	padding: 0 20px;
+}
+
+.imagWrite {
+	margin: 0 auto;
+	max-width: 70vw;
+	margin-left: clamp(20px, 12.5vw, 150px);
+	margin-bottom: 2rem;
+}
+
+.writeImg {
+	width: 100%;
+	height: 250px;
+	border-radius: 10px;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.imagWrite:hover .writeImg {
+	transform: scale(1.02);
+}
+
+.writeFormItem {
+	position: relative;
+	width: 100%;
+}
+
+.WriteFormGroup {
+	margin-left: clamp(20px, 10.8vw, 130px);
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 1rem;
+}
+
+.writeIcon {
+	width: 25px;
+	height: 25px;
+	font-size: 20px;
+	color: rgb(129, 125, 125);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border-radius: 6px;
+	padding: 5px;
+}
+
+.writeIcon:hover {
+	color: teal;
+	background-color: rgba(0, 128, 128, 0.1);
+	transform: scale(1.1);
+}
+
+.writeInput {
+	font-size: clamp(20px, 2.5vw, 30px);
+	border: none;
+	padding: 20px;
+	width: min(70vw, 800px);
+	border-bottom: 2px solid #e1e8ed;
+	transition: all 0.3s ease;
+	background: transparent;
+}
+
+.writeInput::placeholder {
+	color: rgb(189, 185, 185);
+	font-weight: 400;
+}
+
+.writeInput:focus {
+	outline: none;
+	border-bottom-color: teal;
+	background: rgba(0, 128, 128, 0.02);
+}
+
+.writeText {
+	width: min(70vw, 800px);
+	height: 100vh;
+	font-family: inherit;
+	font-size: clamp(16px, 1.5vw, 20px);
+	margin-left: clamp(20px, 10.8vw, 130px);
+	border: none;
+	padding: 20px;
+	resize: none;
+	transition: all 0.3s ease;
+	line-height: 1.6;
+}
+
+.writeText:focus {
+	outline: none;
+	background: rgba(0, 128, 128, 0.02);
+}
+
+.writeSubmit {
+	position: absolute;
+	top: 20px;
+	right: clamp(20px, 4vw, 50px);
+	color: white;
+	background-color: teal;
+	padding: 10px 16px;
+	border: none;
+	border-radius: 10px;
+	font-size: clamp(14px, 1.2vw, 16px);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+}
+
+.writeSubmit:hover {
+	background-color: #006666;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(0, 128, 128, 0.4);
+}
+
+.writeSubmit:active {
+	transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.writeItem {
+	animation: fadeInUp 0.6s ease-out;
+}
+
+@media (max-width: 1024px) {
+	.writeInput {
+		width: 75vw;
+	}
+
+	.writeText {
+		width: 75vw;
+	}
+
+	.imagWrite {
+		max-width: 75vw;
+		margin-left: clamp(15px, 10vw, 120px);
+	}
+
+	.WriteFormGroup {
+		margin-left: clamp(15px, 8vw, 100px);
+	}
+
+	.writeText {
+		margin-left: clamp(15px, 8vw, 100px);
+	}
+}
+
+@media (max-width: 768px) {
+	.write {
+		padding-top: 30px;
+	}
+
+	.writeInput {
+		width: 85vw;
+		font-size: 18px;
+		padding: 15px;
+	}
+
+	.writeText {
+		width: 85vw;
+		font-size: 16px;
+		margin-left: clamp(10px, 5vw, 60px);
+		height: 80vh;
+	}
+
+	.imagWrite {
+		max-width: 85vw;
+		margin-left: clamp(10px, 5vw, 60px);
+	}
+
+	.writeImg {
+		height: 200px;
+	}
+
+	.WriteFormGroup {
+		margin-left: clamp(10px, 5vw, 60px);
+	}
+
+	.writeSubmit {
+		right: 15px;
+		padding: 8px 12px;
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	.write {
+		padding-top: 20px;
+	}
+
+	.writeInput {
+		width: 90vw;
+		font-size: 16px;
+		padding: 12px;
+	}
+
+	.writeText {
+		width: 90vw;
+		font-size: 14px;
+		margin-left: 20px;
+		height: 70vh;
+		padding: 15px;
+	}
+
+	.imagWrite {
+		max-width: 90vw;
+		margin-left: 20px;
+	}
+
+	.writeImg {
+		height: 150px;
+	}
+
+	.WriteFormGroup {
+		margin-left: 20px;
+		gap: 8px;
+	}
+
+	.writeIcon {
+		width: 20px;
+		height: 20px;
+		font-size: 16px;
+	}
+
+	.writeSubmit {
+		right: 10px;
+		top: 15px;
+		padding: 6px 10px;
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 320px) {
+	.writeInput {
+		width: 95vw;
+		margin-left: 10px;
+	}
+
+	.writeText {
+		width: 95vw;
+		margin-left: 10px;
+	}
+
+	.imagWrite {
+		max-width: 95vw;
+		margin-left: 10px;
+	}
+
+	.WriteFormGroup {
+		margin-left: 10px;
+	}
+}

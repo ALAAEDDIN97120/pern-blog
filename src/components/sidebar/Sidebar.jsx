@@ -14,11 +14,7 @@ const Sidebar = () => {
 				<hr />
 				<span className="sidebarTitle">ABOUT ME</span>
 				<hr />
-				<img
-					className="sidebarImg"
-					src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-					alt=""
-				/>
+				<img className="sidebarImg" src="/img/me.png" alt="" />
 				<div className="text">
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. praesentium
@@ -43,11 +39,35 @@ const Sidebar = () => {
 						<hr />
 						<h4>FOLLOW US</h4>
 						<hr />
-						<div className="topLeft">
-							<FontAwesomeIcon className="iconSidebar" icon={faFacebook} />
-							<FontAwesomeIcon className="iconSidebar" icon={faInstagram} />
-							<FontAwesomeIcon className="iconSidebar" icon={faTwitter} />
-							<FontAwesomeIcon className="iconSidebar" icon={faLinkedin} />
+						<div className="iconSidebar">
+							<a
+								href="https://www.facebook.com"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FontAwesomeIcon className="iconTopbar" icon={faFacebook} />
+							</a>
+							<a
+								href="https://www.instagram.com"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FontAwesomeIcon className="iconTopbar" icon={faInstagram} />
+							</a>
+							<a
+								href="https://twitter.com"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FontAwesomeIcon className="iconTopbar" icon={faTwitter} />
+							</a>
+							<a
+								href="https://www.linkedin.com/in"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FontAwesomeIcon className="iconTopbar" icon={faLinkedin} />
+							</a>
 						</div>
 					</div>
 				</div>
